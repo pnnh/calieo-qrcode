@@ -21,6 +21,7 @@
     "@stylexjs/stylex": "^0.7.5",
     "base64url": "^3.0.1",
     "cors": "^2.8.5",
+    "expo": "^51.0.32",
     "express": "^4.19.2",
     "html": "^1.0.0",
     "i18next": "^23.14.0",
@@ -35,10 +36,12 @@
     "prop-types": "^15.8.1",
     "qs": "^6.12.1",
     "query-string": "^9.0.0",
-    "react": "^18.3.1",
+    "react": "18.2.0",
     "react-cookie": "^7.2.0",
-    "react-dom": "^18.3.1",
+    "react-dom": "18.2.0",
     "react-i18next": "^15.0.1",
+    "react-native": "0.74.5",
+    "react-native-web": "~0.19.10",
     "react-router-dom": "^6.26.1",
     "react-strict-dom": "^0.0.26",
     "recoil": "^0.7.7",
@@ -51,7 +54,8 @@
     "swr": "^2.2.5",
     "urlpattern-polyfill": "^10.0.0",
     "uuid": "^10.0.0",
-    "validator": "^13.12.0"
+    "validator": "^13.12.0",
+    "@expo/metro-runtime": "~3.2.3"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
@@ -76,8 +80,8 @@
     "@types/prismjs": "^1.26.4",
     "@types/prop-types": "^15.7.12",
     "@types/qs": "^6.9.15",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "~18.2.79",
+    "@types/react-dom": "~18.2.25",
     "@types/uuid": "^10.0.0",
     "@types/validator": "^13.11.10",
     "rollup": "^4.21.0",
@@ -88,7 +92,7 @@
     "rollup-preserve-directives": "^1.1.1",
     "tslib": "^2.7.0",
     "tsx": "^4.11.0",
-    "typescript": "5.4.5",
+    "typescript": "~5.3.3",
     "zx": "^8.1.5"
   }
 }
