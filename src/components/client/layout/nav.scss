@@ -1,0 +1,24 @@
+.navComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 1rem;
+
+    &.active {
+      color: dodgerblue;
+    }
+
+    &:hover {
+      color: #f00;
+    }
+  }
+}

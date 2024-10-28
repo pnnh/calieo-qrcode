@@ -6,6 +6,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import {BarCodeComponent} from "@/components/client/barcode";
+import {initI18n} from "@/services/i18next";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     },
 ]);
 
+initI18n(navigator.language || window.navigator.language || 'en')
 
 const container = document.getElementById('root')
 if (!container) {
