@@ -1,33 +1,43 @@
 import React, {useState} from "react";
 import {textToBarCode} from "@/services/client/barcode";
 import {MainLayout} from "@/components/client/layout/main";
-import i18next from "i18next";
 import './barcode.scss'
+import i18next from "i18next";
 
 export function BarCodeComponent() {
-    const [text, setText] = useState('abcd')
+    const [text, setText] = useState('')
     const [error, setError] = useState('')
     return <MainLayout path={'/barcode'}>
         <div className={'barCodeComponent'}>
-            <div className={'description'}>{i18next.t('barcode.description')}</div>
-            <div>
-                <textarea value={text} onChange={(event) => setText(event.target.value)}></textarea>
+            {/*<div className={'description'}>{i18next.t('barcode.description')}</div>*/}
+            <div className={'textContainer'}>
+                <textarea value={text}
+                          maxLength={2048}
+                          onChange={(event) => setText(event.target.value)}></textarea>
             </div>
-            <div>
+            <div className={'actionContainer'}>
                 <button onClick={() => {
                     if (!text) {
+                        setError(i18next.t('barcode.emptyText'))
                         return
                     }
-                    textToBarCode('#resultContainer', text)
+                    try {
+                        setError('')
+                        textToBarCode('#resultContainer', text)
+                    } catch (e) {
+                        setError(`${i18next.t('barcode.errorTip')}${e}`)
+                    }
                 }}>
-                    点击生成
+                    {i18next.t('barcode.generate')}
                 </button>
             </div>
-            <div>
+            <div className={'errorContainer'}>
                 {error && <div>{error}</div>}
             </div>
-            <svg id={'resultContainer'}>
-            </svg>
+            <div className={'resultContainer'}>
+                <svg id={'resultContainer'}>
+                </svg>
+            </div>
         </div>
     </MainLayout>
 }

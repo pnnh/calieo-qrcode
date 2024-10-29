@@ -26,10 +26,16 @@ export function getZhJson() {
                 title: "二维码与条形码工具"
             },
             barcode: {
-                description: '生成条形码'
+                description: '生成条形码',
+                emptyText: '请输入内容',
+                errorTip: '生成条形码失败：',
+                generate: '生成'
             },
             qrcode: {
-                description: '生成二维码'
+                description: '生成二维码',
+                emptyText: '请输入内容',
+                errorTip: '生成二维码失败：',
+                generate: '生成'
             }
         }
     }
@@ -42,10 +48,16 @@ export function getEnJson() {
                 "title": "QR Code & Barcode Tool"
             },
             barcode: {
-                description: 'Generate Barcode'
+                description: 'Generate Barcode',
+                emptyText: 'Please input content',
+                errorTip: 'Failed to generate barcode: ',
+                generate: 'Generate'
             },
             qrcode: {
-                description: 'Generate QR Code'
+                description: 'Generate QR Code',
+                emptyText: 'Please input content',
+                errorTip: 'Failed to generate QR code: ',
+                generate: 'Generate'
             }
         }
     }

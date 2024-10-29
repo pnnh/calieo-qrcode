@@ -1,41 +1,45 @@
 import {useState} from "react";
 import {textToQRCode} from "@/services/client/qrcode";
 import {MainLayout} from "@/components/client/layout/main";
-import i18next from "i18next";
 import './qrcode.scss'
+import i18next from "i18next";
 
 export function QRCodeComponent() {
-    const [text, setText] = useState('输入文本')
+    const [text, setText] = useState('')
     const [downloadUrl, setDownloadUrl] = useState('')
     const [error, setError] = useState('')
     return <MainLayout path={'/'}>
         <div className={'qrCodeComponent'}>
-            <div className={'description'}>{i18next.t('qrcode.description')}</div>
-            <div>
-                <textarea value={text} onChange={(event) => setText(event.target.value)}></textarea>
+            {/*<div className={'description'}>{i18next.t('qrcode.description')}</div>*/}
+            <div className={'textContainer'}>
+                <textarea value={text}
+                          onChange={(event) => setText(event.target.value)}
+                          maxLength={2048}></textarea>
             </div>
-            <div>
+            <div className={'actionContainer'}>
                 <button onClick={() => {
                     if (!text) {
+                        setError(i18next.t('qrcode.emptyText'))
                         return
                     }
                     try {
+                        setError('')
                         textToQRCode(text).then(downloadUrl => {
                             setDownloadUrl(downloadUrl)
                         })
                     } catch (e) {
-                        setError('生成出错')
+                        setError(`${i18next.t('qrcode.errorTip')}${e}`)
                     }
                 }}>
-                    点击生成
+                    {i18next.t('qrcode.generate')}
                 </button>
             </div>
-            <div>
+            <div className={'errorContainer'}>
                 {error && <div>{error}</div>}
             </div>
-            <div title={'结果预览'}>
+            <div className={'resultContainer'}>
                 {
-                    downloadUrl && <img alt={'预览图'} src={downloadUrl}/>
+                    downloadUrl && <img alt={'preview'} src={downloadUrl}/>
                 }
             </div>
         </div>
