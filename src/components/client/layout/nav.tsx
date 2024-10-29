@@ -1,11 +1,17 @@
 import './nav.scss'
 
-export function NavComponent({path}: { path: string }) {
+export function NavComponent({path, lang}: { path: string, lang: string }) {
+    const activeClass = (item: string) => {
+        if (!item) {
+            return path === `/${lang}` ? 'active' : ''
+        }
+        return path.startsWith(`/${lang}${item}`) ? 'active' : ''
+    }
     return (
         <nav className={'navComponent'}>
             <div>
-                <a href="/" className={path === '/' ? 'active' : ''}>QR Code</a>
-                <a href="/barcode" className={path === '/barcode' ? 'active' : ''}>Bar Code</a>
+                <a href={`/${lang}`} className={activeClass('')}>QR Code</a>
+                <a href={`/${lang}/barcode`} className={activeClass('/barcode')}>Bar Code</a>
             </div>
         </nav>
     )

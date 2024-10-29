@@ -1,0 +1,26 @@
+{
+  "barcode": {
+    "title": "Barcode Generator",
+    "description": "Generate Barcode",
+    "emptyText": "Please input content",
+    "errorTip": "Failed to generate barcode: ",
+    "generate": "Generate",
+    "seo": {
+      "title": "Barcode Generator",
+      "keywords": "Barcode Generator",
+      "description": "A simple and convenient barcode generator"
+    }
+  },
+  "qrcode": {
+    "title": "QR Code Generator",
+    "description": "Generate QR Code",
+    "emptyText": "Please input content",
+    "errorTip": "Failed to generate QR code: ",
+    "generate": "Generate",
+    "seo": {
+      "title": "QR Code Generator",
+      "keywords": "QR Code Generator",
+      "description": "A simple and convenient QR code generator"
+    }
+  }
+}

@@ -1,5 +1,6 @@
-html,
-body {
+@charset "UTF-8";
+
+html, body {
   width: 100vw;
   height: 100vh;
   min-width: 20em;
@@ -13,4 +14,15 @@ body {
   font-size: 1em;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
+}
+
+@media (min-width: 80em) {
+  html,
+  body {
+    font-size: 1.1em;
+  }
+}
+
+nextjs-portal {
+  display: none;
 }

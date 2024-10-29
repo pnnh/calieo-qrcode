@@ -1,13 +1,16 @@
-import i18next from "i18next";
 import {NavComponent} from "./nav";
 import './main.scss'
+import {RootLayout, BaseRouterParams, SeoMeta} from "@/components/client/layout/root";
 
-export function MainLayout({path, children}: { path: string, children: any }) {
-    return <div className={'mainLayout'}>
-        <h1 className={'productTitle'}>{i18next.t('client.title')}</h1>
-        <NavComponent path={path}/>
-        <div>
-            {children}
+export async function MainLayout({path, params, children, seoMeta}: {
+    path: string, params: BaseRouterParams, children: any, seoMeta: SeoMeta
+}) {
+    return <RootLayout params={params} seoMeta={seoMeta}>
+        <div className={'mainLayout'}>
+            <NavComponent path={path} lang={seoMeta.lang}/>
+            <div>
+                {children}
+            </div>
         </div>
-    </div>
+    </RootLayout>
 }
