@@ -1,6 +1,7 @@
 {
   "name": "polaris-cloud",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "vite": "vite",
     "dev": "next dev -p 8010",
